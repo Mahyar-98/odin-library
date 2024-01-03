@@ -21,9 +21,6 @@ const prideAndPrejudice = new Book("Pride and Prejudice", "Jane Austen", 496, tr
 
 /* ---------------------------------------------------------------------------------- */
 
-const page = document.getElementsByTagName("p")
-const newBookBtn = document.getElementById("newBookBtn")
-newBookBtn.addEventListener("click", () => {document.getElementById("p").textContent = "hello!"})
 const bookList = document.createElement("ul")
 document.body.append(bookList)
 for (let i of myLibrary) {
@@ -76,7 +73,9 @@ form.appendChild(inputRead)
 form.appendChild(document.createElement('br'))
 form.appendChild(submitBtn)
 
-document.body.appendChild(form)
+const newBookBtn = document.getElementById("newBookBtn")
+newBookBtn.addEventListener("click", () => {document.body.appendChild(form)})
+
 
 function createLabel(text, forAttribute) {
     const label = document.createElement('label');
